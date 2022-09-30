@@ -1,0 +1,36 @@
+package javaapplication1;
+
+import java.util.Scanner;
+
+public class Codingers {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int pilih, jumlah, diskon;
+        System.out.println("Silahkan Pilih Menu :");
+        System.out.println("1. Beli Minuman" + "\n" + "2. Keluar");
+        System.out.print("Masukkan Pilihan : ");
+        pilih = input.nextInt();
+
+        if (pilih == 1) {
+            System.out.print("Jumlah minuman yang dibeli : ");
+            jumlah = input.nextInt();
+            int harga = jumlah * 10000;
+            if (harga > 50000) {
+                diskon = harga * 10 / 100;
+                System.out.println("Anda mendapatkan 10% diskon");
+            } else if (harga > 30000) {
+                diskon = harga * 5 / 100;
+                System.out.println("Anda mendapatkan 5% diskon");
+            } else {
+                diskon = 0;
+            }
+            System.out.println("Anda membeli minuman sebanyak " + jumlah + " buah dengan total harga Rp. " + harga + " dan potongan Rp. " + diskon + ", total belanja keseluruhan Rp. " + (harga - diskon));
+        } else if (pilih == 2) {
+            System.out.println("Anda keluar dari program");
+        } else {
+            System.out.println("Menu tidak tersedia");
+        }
+
+    }
+}
